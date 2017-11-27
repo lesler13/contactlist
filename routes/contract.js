@@ -52,4 +52,24 @@ let list = [
     url: 'www.google.com', notes: 'Do not trust anyone.'},
 ];
 
+//Develop GET /contacts API to list all contacts AND Develop GET /contacts?name= API to search contact by name
+router.get('/', (req, res) => {
+    
+     var x = req.query.firstname;
+      if(x != null)
+      {
+          for(var i=0; i<list.length; i++)
+          {
+              if(list[i].firstname == x)
+              {
+                  res.json(list[i]);
+              }   
+          }
+      }
+      else{
+          res.json(list);
+      }
+     
+  })
+
 module.exports = router;
