@@ -71,5 +71,12 @@ router.get('/', (req, res) => {
       }
      
   })
+  
+  //Develop GET /contact/:id API to get contact information
+router.get('/:id', (req, res) => {
+    
+    res.json(list[req.params.id]);
+    
+ })
 
 module.exports = router;
