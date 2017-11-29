@@ -108,5 +108,21 @@ router.post('/', (req, res) => {
         }
     });
 
+//Develop PUT /contact/:id API to update contact information
+    router.put('/:id',function (req, res){
+        for(var i=0; i<list.length; i++)
+        {
+            if(list[i].id == req.params.id)
+            {
+                list[i].firstname = req.body.firstname;
+                list[i].lastname = req.body.lastname;
+                list[i].email = req.body.email;
+                list[i].phone = req.body.phone;
+                list[i].url = req.body.url;
+                list[i].notes = req.body.notes;
+                break;
+            }   
+        }
+    });
 
 module.exports = router;
