@@ -79,7 +79,6 @@ router.get('/:id', (req, res) => {
     
  })
 
-  
  //Develop POST /contacts API to create new contact
 router.post('/', (req, res) => {
     var temp = 0;
