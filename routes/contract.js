@@ -79,4 +79,35 @@ router.get('/:id', (req, res) => {
     
  })
 
+  
+ //Develop POST /contacts API to create new contact
+router.post('/', (req, res) => {
+    var temp = 0;
+    if(list.length){
+    temp = parseInt(list[list.length - 1].id) + 1;
+    }
+        let  newList = {
+            id : temp.toString(),
+            firstname: req.body.firstname,
+            lastname : req.body.lastname,
+            email :    req.body.email,
+            phone :    req.body.phone,
+            url :      req.body.url,
+            notes :    req.body.notes
+        }
+        list.push(newList);
+    });
+
+//Develop DELETE /contacts/:id API to remove contact from list
+    router.delete('/:id', function (req, res) {
+        for(var i=0;i<list.length;i++)
+        {
+            if(list[i].id == req.params.id){
+            list.splice(i, 1);
+            break;
+        }
+        }
+    });
+
+
 module.exports = router;
