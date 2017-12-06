@@ -114,11 +114,17 @@ router.post('/', (req, res) => {
         {
             if(list[i].id == req.params.id)
             {
+                if(list[i].firstname!=null)
                 list[i].firstname = req.body.firstname;
+                if(list[i].lastname!=null)
                 list[i].lastname = req.body.lastname;
+                if(list[i].email!=null)
                 list[i].email = req.body.email;
+                if(list[i].phone!=null)
                 list[i].phone = req.body.phone;
+                if(list[i].url!=null)
                 list[i].url = req.body.url;
+                if(list[i].notes!=null)
                 list[i].notes = req.body.notes;
                 break;
             }   
